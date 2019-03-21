@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "household#index"
-  get "household" => "household#index"
-  get "budget" => "budget#index"
+  resources :household
+  
+  resources :budget
+  
   get "asset" => "asset#index"
   get "profit" => "profit#index"
+  
 end

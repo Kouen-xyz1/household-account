@@ -1,38 +1,31 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <title>予算管理 | FAM (Finantial Management)</title>
-  </head>
-  <body>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">大項目</th>
-          <th scope="col">中項目</th>
-          <th scope="col">小項目</th>
-          <th scope="col">予算</th>
-          <th scope="col">予算（前月）</th>
-          <th scope="col">実績（前月）</th>
-          <th scope="col">予算（前年同月）</th>
-          <th scope="col">実績（前年同期）</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @budgets.each do |h| %>
-          <tr>
-            <th scope="row"><%= h.id %></th>
-              <td><%= h.category %></td>
-              <td><%= h.sub_category1 %></td>
-              <td><%= h.sub_category2 %></td>
-              <td><%= number_to_currency(h.budget, :unit => "¥",:precision => 0) %></td>
-              <td><%= number_to_currency(h.budget_month_on_month, :unit => "¥",:precision => 0) %></td>
-              <td><%= number_to_currency(h.result_month_on_month, :unit => "¥",:precision => 0) %></td>
-              <td><%= number_to_currency(h.budget_year_on_year, :unit => "¥",:precision => 0) %></td>
-              <td><%= number_to_currency(h.result_year_on_year, :unit => "¥",:precision => 0) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>    
-  </body>
-</html>
+<%= link_to("予算登録", "/budget/new") %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">大項目</th>
+      <th scope="col">中項目</th>
+      <th scope="col">小項目</th>
+      <th scope="col">予算</th>
+      <th scope="col">予算（前月）</th>
+      <th scope="col">実績（前月）</th>
+      <th scope="col">予算（前年同月）</th>
+      <th scope="col">実績（前年同期）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @budgets.each do |h| %>
+      <tr>
+        <th scope="row"><%= h.id %></th>
+          <td><%= h.category %></td>
+          <td><%= h.sub_category1 %></td>
+          <td><%= h.sub_category2 %></td>
+          <td><%= number_to_currency(h.budget, :unit => "¥",:precision => 0) %></td>
+          <td><%= number_to_currency(h.budget_month_on_month, :unit => "¥",:precision => 0) %></td>
+          <td><%= number_to_currency(h.result_month_on_month, :unit => "¥",:precision => 0) %></td>
+          <td><%= number_to_currency(h.budget_year_on_year, :unit => "¥",:precision => 0) %></td>
+          <td><%= number_to_currency(h.result_year_on_year, :unit => "¥",:precision => 0) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
