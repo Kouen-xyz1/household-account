@@ -23,12 +23,12 @@
         <th scope="row"><%= h.id %></th>
         <td><%= h.entry_date %></td>
         <td><%= @categories[h.category] %></td>
-        
+        <td><%= @categories_middles[h.sub_category1] %></td>
         
 
-        <td><%= h.sub_category1 %></td>
+        
         <td><%= h.sub_category2 %></td>
-        <td><%= h.payment %></td>
+        <td><%= h.payment_i18n %></td>
         <td><%= number_to_currency(h.result, :unit => "¥",:precision => 0) %></td>
         <td><%= number_to_currency(h.sum_credit, :unit => "¥", :precision => 0) %></td>
         <td><%= h.check_out %></td>

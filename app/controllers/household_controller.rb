@@ -4,14 +4,15 @@ class HouseholdController < ApplicationController
     @households = Household.where(user_id: current_user.id)
     categories = Category.all.select(:id, :name)
     @categories = Hash[categories.map{|category| [category.id, category.name]}]
-    #@households = CategoriesMiddle.where(user_id: current_user.id)
-    #categories_middles = CategoriesMiddle.all.select(:id, :name)
-    #@categories_middles = Hash[categories_middles.map{|categories_middle| [categories_middle.id, categories_middle.name]}]
+    categories_middles = CategoriesMiddle.all.select(:id, :name)
+    @categories_middles = Hash[categories_middles.map{|categories_middle| [categories_middle.id, categories_middle.name]}]
 
 
   end
   
   def new
+    categories = Category.all.select(:id, :name)
+    @categories = Hash[categories.map{|category| [category.id, category.name]}]
   end
   
   def create
