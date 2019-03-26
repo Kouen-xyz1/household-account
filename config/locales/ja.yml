@@ -15,7 +15,7 @@ ja:
         complete_c: 完了
       detail:
         incomplete: 未完了
-        complete: 完了
+        complete_d: 完了
       analysis:
         needs: 必要
         wants: 欲しい
