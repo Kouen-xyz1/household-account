@@ -9,3 +9,14 @@ ja:
         gift_card: ギフト券
         point: ポイント
         others: その他
+      check_out:
+        pay: 支払
+        receive: 受取
+        complete_c: 完了
+      detail:
+        incomplete: 未完了
+        complete: 完了
+      analysis:
+        needs: 必要
+        wants: 欲しい
+        

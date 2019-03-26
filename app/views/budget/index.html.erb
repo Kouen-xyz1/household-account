@@ -25,6 +25,11 @@
           <td><%= number_to_currency(h.result_month_on_month, :unit => "¥",:precision => 0) %></td>
           <td><%= number_to_currency(h.budget_year_on_year, :unit => "¥",:precision => 0) %></td>
           <td><%= number_to_currency(h.result_year_on_year, :unit => "¥",:precision => 0) %></td>
+          <td>
+            <td>
+              <%= link_to '削除', household_path(h), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+            </td>
+          </td>
       </tr>
     <% end %>
   </tbody>

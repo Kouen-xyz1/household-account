@@ -4,10 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "household#index"
   resources :household
-  
   resources :budget
-  
-  get "asset" => "asset#index"
-  get "profit" => "profit#index"
-  
+  resources :asset
+  resources :profit
 end

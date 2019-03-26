@@ -1,9 +1,4 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <title>収支管理 | FAM (Finantial Management)</title>
-  </head>
-  <body>
+<%= link_to("収支登録", "/profit/new") %>
     <table class="table">
       <thead>
         <tr>
@@ -26,6 +21,10 @@
               <td><%= number_to_currency(h.year_2019_01, :unit => "¥",:precision => 0) %></td>
               <td><%= number_to_currency(h.year_2019_02, :unit => "¥",:precision => 0) %></td>
               <td><%= number_to_currency(h.year_2019_03, :unit => "¥",:precision => 0) %></td>
+              <td>
+                <%= link_to '削除', household_path(h), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+              </td>
+
           </tr>
         <% end %>
       </tbody>

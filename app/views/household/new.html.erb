@@ -30,15 +30,15 @@
     </div>
     <div class="form-group">
       <%= form.label :check_out %>
-      <%= form.number_field :check_out, class: "form-control"%>
+      <%= form.select :check_out,  Household.payments_i18n.keys.map { |k| [Household.payments_i18n[k], k]}, {}, class: "form-control" %>
     </div>
     <div class="form-group">
       <%= form.label :detail %>
-      <%= form.number_field :detail, class: "form-control"%>
+       <%= form.select :detail,  Household.details_i18n.keys.map { |k| [Household.details_i18n[k], k]}, {}, class: "form-control" %>
     </div>
     <div class="form-group">
       <%= form.label :analysis %>
-      <%= form.number_field :analysis, class: "form-control"%>
+      <%= form.select :analysis,  Household.analysiss_i18n.keys.map { |k| [Household.analysiss_i18n[k], k]}, {}, class: "form-control" %> 
     </div>
     <div class="form-group">
       <%= form.label :client %>

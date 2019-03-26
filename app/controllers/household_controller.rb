@@ -33,4 +33,11 @@ class HouseholdController < ApplicationController
       )
   redirect_to action: :index and return
   end
+  
+  def destroy
+    @household = Household.find_by(id: params[:id])
+    redirect_to :household_index_path and return unless @household
+    @household.destroy
+    redirect_to action: :index and return
+  end
 end
