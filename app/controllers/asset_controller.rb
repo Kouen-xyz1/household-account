@@ -7,6 +7,18 @@ class AssetController < ApplicationController
   def new
   end
   
+  def edit
+    @asset = Asset.find_by(id: params[:id])
+    redirect_to :asset_index_path and return unless @asset
+  end
+
+  def update
+    @asset = Asset.find_by(id: params[:id])
+    redirect_to :asset_index_path and return unless @asset
+    @asset.update(asset_params)
+    redirect_to action: :index and return
+  end
+
   def create
     Asset.create(
       user_id: current_user.id,
@@ -22,5 +34,10 @@ class AssetController < ApplicationController
     @asset.destroy
     redirect_to action: :index and return
   end
+  
+  def asset_params
+    params.require(:asset).permit(:user_id, :asset_type, :name)
+  end
+
 end
 

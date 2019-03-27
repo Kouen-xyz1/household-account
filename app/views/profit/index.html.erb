@@ -14,7 +14,12 @@
       <tbody>
         <% @profits.each do |h| %>
           <tr>
-            <th scope="row"><%= h.id %></th>
+            <th scope="row">
+              <%= link_to edit_profit_path(h.id) do %>
+              <%= h.id %>
+              <% end %>
+            </th>
+
               <td><%= h.category %></td>
               <td><%= h.sub_category1 %></td>
               <td><%= h.sub_category2 %></td>

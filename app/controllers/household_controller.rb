@@ -1,13 +1,24 @@
 class HouseholdController < ApplicationController
   before_action :require_login
-  before_action :set_categories, only: [:index, :new]
+  before_action :set_categories, only: [:index, :new, :edit]
   def index
     @households = Household.where(user_id: current_user.id)
     
   end
   
   def new
-    
+  end
+  
+  def edit
+    @household = Household.find_by(id: params[:id])
+    redirect_to :household_index_path and return unless @household
+  end
+  
+  def update
+    @household = Household.find_by(id: params[:id])
+    redirect_to :household_index_path and return unless @household
+    @household.update(household_params)
+    redirect_to action: :index and return
   end
   
   def create
@@ -45,4 +56,7 @@ class HouseholdController < ApplicationController
     @categories_lows = Hash[categories_lows.map{|categories_low| [categories_low.id, categories_low.name]}]
   end
   
+  def household_params
+    params.require(:household).permit(:user_id, :entry_date, :category, :sub_category1, :sub_category2, :payment, :result, :sum_credit, :check_out, :detail, :analysis, :client, :content)
+  end
 end

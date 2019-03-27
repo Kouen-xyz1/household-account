@@ -21,7 +21,11 @@
   <tbody>
     <% @households.each do |h| %>
       <tr>
-        <th scope="row"><%= h.id %></th>
+        <th scope="row">
+          <%= link_to edit_household_path(h.id) do %>
+            <%= h.id %>
+          <% end %>
+        </th>
         <td><%= h.entry_date %></td>
         <td><%= @categories[h.category] %></td>
         <td><%= @categories_middles[h.sub_category1] %></td>

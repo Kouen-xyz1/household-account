@@ -16,7 +16,11 @@
       <tbody>
          <% @assets.each do |h| %>
           <tr>
-            <th scope="row"><%= h.id %></th>
+            <th scope="row">
+              <%= link_to edit_asset_path(h.id) do %>
+              <%= h.id %>
+              <% end %>
+            </th>
               <td><%= h.asset_type %></td>
               <td><%= h.name %></td>
               <td>

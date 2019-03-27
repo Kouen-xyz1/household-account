@@ -1,0 +1,39 @@
+<div class="container">
+  <%= form_with model: @budget do |form| %>
+    <div class="form-group">
+      <%= form.label :category %>
+      <%= form.number_field :category, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= form.label :sub_category1 %>
+      <%= form.number_field :sub_category1, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= form.label :sub_category2 %>
+      <%= form.number_field :sub_category2, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= form.label :budget %>
+      <%= form.number_field :budget, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= form.label :budget_month_on_month %>
+      <%= form.number_field :budget_month_on_month, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= form.label :result_month_on_month %>
+      <%= form.number_field :result_month_on_month, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= form.label :budget_year_on_year %>
+      <%= form.number_field :budget_year_on_year, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= form.label :result_year_on_year %>
+      <%= form.number_field :result_year_on_year, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= form.submit "保存", :class => "btn btn-info" %>
+    </div>
+  <% end %>
+</div>
