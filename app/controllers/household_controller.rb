@@ -6,7 +6,9 @@ class HouseholdController < ApplicationController
     @categories = Hash[categories.map{|category| [category.id, category.name]}]
     categories_middles = CategoriesMiddle.all.select(:id, :name)
     @categories_middles = Hash[categories_middles.map{|categories_middle| [categories_middle.id, categories_middle.name]}]
-
+    categories_lows = CategoriesLow.all.select(:id, :name)
+    @categories_lows = Hash[categories_lows.map{|categories_low| [categories_low.id, categories_low.name]}]
+    
 
   end
   

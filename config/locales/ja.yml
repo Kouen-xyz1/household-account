@@ -19,4 +19,9 @@ ja:
       analysis:
         needs: 必要
         wants: 欲しい
-        
+    asset:
+      asset_type:
+        current asset: 流動資産
+        fixed asset: 固定資産
+        current Liability: 流動負債
+        fixed Liability: 固定負債

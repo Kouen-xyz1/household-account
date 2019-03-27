@@ -8,7 +8,7 @@ class ProfitController < ApplicationController
   end
 
   def create
-    Budget.create(
+    Profit.create(
       user_id: current_user.id,
       category: params[:category],
       sub_category1: params[:sub_category1],

@@ -2,7 +2,7 @@
   <%= form_with url: asset_index_path do |form| %>
     <div class="form-group">
       <%= form.label :asset_type %>
-      <%= form.number_field :asset_type, class: "form-control"%>
+      <%= form.select :asset_type,  Asset.asset_types_i18n.keys.map { |k| [Asset.asset_types_i18n[k], k]}, {}, class: "form-control" %>
     </div>
     <div class="form-group">
       <%= form.label :name %>

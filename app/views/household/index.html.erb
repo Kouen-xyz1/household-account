@@ -25,16 +25,16 @@
         <td><%= h.entry_date %></td>
         <td><%= @categories[h.category] %></td>
         <td><%= @categories_middles[h.sub_category1] %></td>
-       
+        <td><%= @categories_lows[h.sub_category2] %></td>
 
         
-        <td><%= h.sub_category2 %></td>
+        
         <td><%= h.payment_i18n %></td>
         <td><%= number_to_currency(h.result, :unit => "¥",:precision => 0) %></td>
         <td><%= number_to_currency(h.sum_credit, :unit => "¥", :precision => 0) %></td>
-        <td><%= h.check_out %></td>
-        <td><%= h.detail %></td>
-        <td><%= h.analysis %></td>
+        <td><%= h.check_out_i18n %></td>
+        <td><%= h.detail_i18n %></td>
+        <td><%= h.analysis_i18n %></td>
         <td><%= h.client %></td>
         <td><%= h.content %></td>
         <td>
