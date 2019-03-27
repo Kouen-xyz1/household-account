@@ -20,7 +20,7 @@
               <td><%= h.asset_type %></td>
               <td><%= h.name %></td>
               <td>
-                <%= link_to '削除', household_path(h), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+                <%= link_to '削除', asset_path(h), method: :delete, data: { confirm: '本当に削除しますか？' } %>
               </td>
           </tr>
         <% end %>

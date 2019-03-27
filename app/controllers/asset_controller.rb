@@ -15,5 +15,12 @@ class AssetController < ApplicationController
       )
     redirect_to action: :index and return
   end
+  
+  def destroy
+    @asset = Asset.find_by(id: params[:id])
+    redirect_to :asset_index_path and return unless @asset
+    @asset.destroy
+    redirect_to action: :index and return
+  end
 end
 
